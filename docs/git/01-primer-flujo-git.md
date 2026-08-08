@@ -73,7 +73,7 @@ Rectificar en que carpeta estamos o ubicacion actual
 pwd
 /c/Users/larau/ERP-Software-Architecture
 
-# Observación
+### Observación
 
 Usando Git bash no usamos slash invertido para construir una ruta como en CMD, se usa el slash /
 
@@ -135,7 +135,7 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 
-# Observación 
+### Observación 
 
 A diferencia del paso 6 ahora el git status nos muestra Untracked "Significa: Veo que agregaste archivos nuevos, pero todavía no forman parte del historial del proyecto." 
 
@@ -160,7 +160,7 @@ Changes to be committed:
         new file:   docs/images/10_stimulus.png
         new file:   docs/images/arc42-logo.png
 
-# Observación 
+### Observación 
 Changes to be committed: Git esta diciendo Ya entendí cuáles archivos quieres guardar en la próxima versión.
 
 ## Paso 19.
@@ -176,21 +176,21 @@ git commit -m "Agregar estructura inicial arc42"
  create mode 100644 docs/images/10_stimulus.png
  create mode 100644 docs/images/arc42-logo.png
 
-# Observación 
-# [main]
+### Observación 
+### [main]
 Significa que el commit se hizo sobre la rama main.
 
-# (root-commit)
+### (root-commit)
 Esta palabra aparece solo una vez en la vida de un repositorio.
 Significa: Este es el primer commit del proyecto, a partir del siguiente commit ya no volvera a salir.
 
-# 6e5f72f
+### 6e5f72f
 Ese número es el identificador único del commit (SHA). Cada commit del mundo tiene un identificador diferente, en el futuro se puede hacer git show 6e5f72f para volver a esta versión.
 
-# files changed
+### files changed
 Git detectó que agregue cuatro archivos.
 
-# 998 insertions
+### 998 insertions
 Git también sabe cuántas líneas nuevas ingresaron al proyecto.
 
 ## Paso 20.
@@ -200,7 +200,7 @@ git status
 On branch main
 nothing to commit, working tree clean
 
-# Observación
+### Observación
 Ahora me sale esto nothing to commit, working tree clean: Significa todo está guardado. No hay cambios pendientes.
 
 ## Paso 21.
@@ -222,7 +222,7 @@ git remote -v
 origin  https://github.com/Laraujo-hub/erp-software-architecture.git (fetch)
 origin  https://github.com/Laraujo-hub/erp-software-architecture.git (push)
 
-# Observación
+### Observación
 
 cuando usamos Origin le indicamos a Git Mi repositorio remoto principal se llama origin.
 fetch → Traer cambios desde GitHub hacia tu computador.
@@ -244,7 +244,7 @@ To https://github.com/Laraujo-hub/erp-software-architecture.git
  * [new branch]      main -> main
 branch 'main' set up to track 'origin/main'.
 
-# Observación 
+### Observación 
 git push → Enviar cambios.
 origin → Al repositorio remoto que acabo de configurar.
 main → La rama que voy publicar.
@@ -266,12 +266,12 @@ $ pwd
 larau@LARAUJO MINGW64 ~/ERP-Software-Architecture (main)
 $ mkdir docs/git
 
-# Crear un archivo Markdown vacio con el objetico de comentar como Crear un repositorio Git y sincronizarlo con GitHub
+## Crear un archivo Markdown vacio con el objetico de comentar como Crear un repositorio Git y sincronizarlo con GitHub
 
 larau@LARAUJO MINGW64 ~/ERP-Software-Architecture (main)
 touch docs/git/01-primer-flujo-git.md
 
-# Abrir la carpeta o arcihvo en la cual estoy ubicado actualmente 
+## Abrir la carpeta o arcihvo en la cual estoy ubicado actualmente 
 
 larau@LARAUJO MINGW64 ~/ERP-Software-Architecture (main)
 $ code .

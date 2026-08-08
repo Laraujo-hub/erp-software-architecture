@@ -1,0 +1,18 @@
+@startuml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+' Actor principal
+Person(admin, "Administrador del sistema ERP", "Persona que gestiona y supervisa el sistema ERP.")
+
+' Sistema principal
+System(erp, "Sistema ERP", "Sistema que centraliza y gestiona los procesos administrativos y operativos de la empresa.")
+
+' Sistema externo
+System_Ext(bold, "BOLD", "Servicio externo para facturación electrónica.")
+
+' Relaciones
+Rel(admin, erp, "Gestiona y supervisa el sistema ERP.")
+Rel(erp, bold, "Envía información para la facturación electrónica.")
+
+@enduml
