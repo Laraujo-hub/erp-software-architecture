@@ -1,8 +1,8 @@
-# ERP - Software Architecture
+# ERP -  Product BackLog & UserStory
 
 ## Descripción
 
-Este proyecto corresponde al desarrollo del taller de arquitectura de software
+Este proyecto corresponde al desarrollo del taller de arquitectura de software (Product BackLog & UserStory)
 para el diseño de un sistema ERP (Enterprise Resource Planning).
 
 El objetivo es analizar y documentar una arquitectura de software orientada a
@@ -64,4 +64,4 @@ Los diagramas se encuentran en:![Diagramas](./docs/diagrams)
 
 ## Imagenes
 
-Las imagnes generadas de los diagrmas se encuentran en:![Diagramas](./docs/images)
+Las imagnes generadas de los diagrmas se encuentran en:![Imagenes](./docs/images)
