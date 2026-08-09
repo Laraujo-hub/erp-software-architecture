@@ -1,0 +1,77 @@
+@startuml
+
+entity Producto {
+    * id_producto : INT
+    --
+    nombre : VARCHAR
+    descripcion : VARCHAR
+    unidad : VARCHAR
+}
+
+entity Proveedor {
+    * id_proveedor : INT
+    --
+    nombre : VARCHAR
+    identificacion : VARCHAR
+    telefono : VARCHAR
+}
+
+entity Empleado {
+    * id_empleado : INT
+    --
+    nombre : VARCHAR
+    cargo : VARCHAR
+    telefono : VARCHAR (10)
+}
+
+entity SolicitudCompra {
+    * id_solicitud : INT
+    --
+    fecha : DATE
+    estado : VARCHAR
+    id_empleado : INT
+}
+
+entity DetalleSolicitud {
+    * id_detalle : INT
+    --
+    cantidad : INT
+    id_solicitud : INT
+    id_producto : INT
+}
+
+entity OrdenCompra {
+    * id_orden : INT
+    --
+    fecha : DATE
+    estado : VARCHAR
+    id_proveedor : INT
+}
+
+entity DetalleOrden {
+    * id_detalle : INT
+    --
+    cantidad : INT
+    precio_unitario : DECIMAL
+    id_orden : INT
+    id_producto : INT
+}
+
+entity Recepcion {
+    * id_recepcion : INT
+    --
+    fecha : DATE
+    id_orden : INT
+}
+
+Empleado ||--o{ SolicitudCompra
+SolicitudCompra ||--|{ DetalleSolicitud
+Producto ||--o{ DetalleSolicitud
+
+Proveedor ||--o{ OrdenCompra
+OrdenCompra ||--|{ DetalleOrden
+Producto ||--o{ DetalleOrden
+
+OrdenCompra ||--o{ Recepcion
+
+@enduml

@@ -1,0 +1,48 @@
+@startuml
+
+title Diagrama de Secuencia - Registro de Producto
+
+actor "Gestor de Inventario" as usuario
+
+participant "Aplicación Web\nReact + Vite" as web
+participant "API REST\nNode.js + Express" as api
+database "SQL Server" as db
+
+usuario -> web: Ingresar nombre, descripción y unidad
+usuario -> web: Hacer clic en "Guardar"
+
+web -> api: POST /productos
+activate api
+
+api -> api: Validar datos del producto
+
+alt Datos válidos
+
+    api -> db: Registrar producto
+    activate db
+
+    db --> api: Producto registrado
+    deactivate db
+
+    api --> web: 201 Producto creado
+    deactivate api
+
+    web --> usuario: Mostrar producto en la lista
+
+else Nombre vacío
+
+    api --> web: 400 Nombre obligatorio
+    deactivate api
+
+    web --> usuario: Mostrar mensaje de validación
+
+else Datos incompletos
+
+    api --> web: 400 Campos obligatorios faltantes
+    deactivate api
+
+    web --> usuario: Indicar campos pendientes
+
+end
+
+@endumlca

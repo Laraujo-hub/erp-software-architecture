@@ -1,0 +1,27 @@
+@startuml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+' Actor principal
+Person(admin, "Administrador del sistema ERP", "Persona que gestiona y supervisa el sistema ERP.")
+
+' Sistema principal
+System_Boundary(erp, "Sistema ERP") {
+
+    Container(web, "Aplicación Web", "React + Vite", "Interfaz de usuario para gestionar el sistema ERP.")
+
+    Container(api, "API REST", "Node.js + Express.js", "Implementa la lógica de negocio y expone APIs REST.")
+
+    ContainerDb(db, "Base de datos", "SQL Server", "Almacena los datos del sistema ERP.")
+}
+
+' Sistema externo
+System_Ext(bold, "BOLD", "Servicio externo para facturación electrónica.")
+
+' Relaciones
+Rel(admin, web, "Utiliza")
+Rel(web, api, "Realiza solicitudes HTTP")
+Rel(api, db, "Consulta y almacena datos")
+Rel(api, bold, "Envía información de facturación electrónica")
+
+@enduml
