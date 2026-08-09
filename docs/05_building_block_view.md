@@ -2,75 +2,87 @@
 
 ## Sistema General de Caja Blanca {#_sistema_general_de_caja_blanca}
 
-***\<Diagrama general\>***
+![Diagrama de Contenedores](./images/c2-container.png)
 
-Motivación
+### Motivación
 
-:   *\<Explicación en texto\>*
+El sistema ERP se estructura inicialmente mediante una arquitectura monolítica,
+organizada en tres contenedores principales: una aplicación web, una API REST
+y una base de datos relacional.
 
-Bloques de construcción contenidos
+Esta estructura permite separar las responsabilidades de presentación,
+lógica de negocio y persistencia de datos, facilitando el mantenimiento y la
+evolución progresiva del sistema.
 
-:   *\<Desripción de los bloques de construcción contenidos (Cajas
-    negras)\>*
+### Bloques de construcción contenidos
 
-Interfases importantes
+Los principales bloques de construcción del sistema ERP son:
 
-:   *\<Descripción de las interfases importantes\>*
+- **Aplicación Web (SPA):** proporciona la interfaz de usuario y permite
+  interactuar con las funcionalidades del ERP.
+- **API REST:** implementa la lógica de negocio y proporciona los servicios
+  necesarios para la comunicación con el frontend.
+- **Base de Datos:** almacena de forma persistente la información del ERP.
 
-### \<Caja Negra 1\> {#_caja_negra_1}
+### Interfaces importantes
 
-*\<Propósito/Responsabilidad\>*
+La aplicación web se comunica con la API REST mediante servicios HTTP
+utilizando una interfaz API REST.
 
-*\<Interfase(s)\>*
+La API REST se comunica con SQL Server para consultar y modificar la
+información persistente del sistema.
 
-*\<(Opcional) Características de Calidad/Performance\>*
+La API REST también puede comunicarse con sistemas externos, como BOLD,
+cuando se requiere utilizar servicios de facturación electrónica.
 
-*\<(Opcional) Ubicación Archivo/Directorio\>*
+### Aplicación Web (SPA)
 
-*\<(Opcional) Requerimientos Satisfechos\>*
+**Propósito / Responsabilidad**
 
-*\<(Opcional) Riesgos/Problemas/Incidentes Abiertos\>*
+Proporcionar la interfaz mediante la cual los usuarios interactúan con el
+sistema ERP.
 
-### \<Caja Negra 2\> {#_caja_negra_2}
+**Tecnologías**
 
-*\<plantilla de caja negra\>*
+React y Vite.
 
-### \<Caja Negra N\> {#_caja_negra_n}
+**Interfaz**
 
-*\<Plantilla de caja negra\>*
+Consume los servicios expuestos por la API REST mediante solicitudes HTTP.
 
-### \<Interfase 1\> {#_interfase_1}
+### API REST
 
-...​
+**Propósito / Responsabilidad**
 
-### \<Interfase m\> {#_interfase_m}
+Implementar la lógica de negocio del ERP y gestionar las operaciones
+solicitadas por la aplicación web.
 
-## Nivel 2 {#_nivel_2}
+**Tecnologías**
 
-### Caja Blanca *\<bloque de construcción 1\>* {#_caja_blanca_bloque_de_construcción_1}
+Node.js y Express.js.
 
-*\<plantilla de caja blanca\>*
+**Interfaz**
 
-### Caja Blanca *\<bloque de construcción 2\>* {#_caja_blanca_bloque_de_construcción_2}
+Expone servicios mediante una API REST y se comunica con la base de datos y
+los servicios externos requeridos.
 
-*\<plantilla de caja blanca\>*
+### Base de Datos
 
-...​
+**Propósito / Responsabilidad**
 
-### Caja Blanca *\<bloque de construcción m\>* {#_caja_blanca_bloque_de_construcción_m}
+Almacenar y gestionar de forma persistente la información generada por los
+módulos del ERP.
 
-*\<plantilla de caja blanca\>*
+**Tecnología**
 
-## Nivel 3 {#_nivel_3}
+SQL Server.
 
-### Caja Blanca \<\_bloque de construcción x.1\_\> {#_caja_blanca_bloque_de_construcción_x_1}
+**Interfaz**
 
-*\<plantilla de caja blanca\>*
+La comunicación con la base de datos es realizada por la API REST.
 
-### Caja Blanca \<\_bloque de construcción x.2\_\> {#_caja_blanca_bloque_de_construcción_x_2}
+## Nivel 2
 
-*\<plantilla de caja blanca\>*
-
-### Caja Blanca \<\_bloque de construcción y.1\_\> {#_caja_blanca_bloque_de_construcción_y_1}
-
-*\<plantilla de caja blanca\>*
+No se desarrolla un nivel adicional de bloques de construcción en esta
+versión de la arquitectura, debido a que el alcance del proyecto se limita
+al diseño de alto nivel del sistema ERP.

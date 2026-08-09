@@ -1,15 +1,13 @@
-# Alcance y Contexto del Sistema {#section-context-and-scope}
+# Alcance del Sistema y Contexto {#section-system-scope-and-context}
 
-## Contexto de Negocio {#_contexto_de_negocio}
+## Diagrama de Contexto
 
-**\<Diagrama o Tabla\>**
+El siguiente diagrama representa el contexto del sistema ERP y sus principales
+interacciones externas.
 
-**\<optionally: Explanation of external domain interfaces\>**
+El ERP centraliza los procesos operativos de la empresa y permite que el
+administrador gestione y supervise las diferentes funcionalidades del sistema.
+Para la facturación electrónica, el ERP se integra con BOLD como servicio
+externo.
 
-## Contexto Técnico {#_contexto_técnico}
-
-**\<Diagrama o Tabla\>**
-
-**\<Opcional: Explicación de las interfases técnicas\>**
-
-**\<Mapeo de Entrada/Salida a canales\>**
+![Diagrama de Contexto](./images/c1-context.png)

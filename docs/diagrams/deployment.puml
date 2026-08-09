@@ -1,0 +1,55 @@
+@startuml
+title Diagrama de Despliegue - Sistema ERP
+
+' ============================================================
+' USUARIO
+' ============================================================
+
+node "Cliente" {
+    artifact "Navegador Web"
+}
+
+' ============================================================
+' SERVIDOR WEB
+' ============================================================
+
+node "Servidor Web\nWindows Server" as web_server {
+
+    node "IIS" as iis {
+        artifact "Aplicación Web\nReact + Vite" as frontend
+    }
+}
+
+' ============================================================
+' SERVIDOR DE APLICACIONES
+' ============================================================
+
+node "Servidor de Aplicaciones\nWindows Server" as app_server {
+
+    node "Node.js + Express.js" as node {
+        artifact "API REST" as api
+    }
+}
+
+' ============================================================
+' SERVIDOR DE BASE DE DATOS
+' ============================================================
+
+database "Servidor de Base de Datos\nSQL Server" as database_server
+
+' ============================================================
+' SISTEMA EXTERNO
+' ============================================================
+
+cloud "BOLD\nServicio externo de\nfacturación electrónica" as bold
+
+' ============================================================
+' COMUNICACIONES
+' ============================================================
+
+"Cliente" --> web_server : HTTPS
+web_server --> app_server : HTTPS
+app_server --> database_server : TCP/IP
+app_server --> bold : HTTPS
+
+@enduml
