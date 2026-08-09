@@ -31,6 +31,7 @@ criterios de aceptación gestionados en Jira.
 
 Las principales metas de calidad consideradas para la arquitectura son:
 
+<!--
 +-----------------------+-------------------------------------------------------------------------------------------------------+
 | Atributo de calidad   | Meta                                                                                                  |
 +=======================+=======================================================================================================+
@@ -46,11 +47,20 @@ Las principales metas de calidad consideradas para la arquitectura son:
 +-----------------------+-------------------------------------------------------------------------------------------------------+
 | Integridad de datos   | Garantizar la consistencia de la información mediante una base de datos relacional y transacciones.   |
 +-----------------------+-------------------------------------------------------------------------------------------------------+
+-->
 
+| Atributo de calidad | Meta |
+|---|---|
+| Usabilidad | Proporcionar una interfaz sencilla e intuitiva para los usuarios. |
+| Mantenibilidad | Mantener una estructura organizada que facilite la modificación y evolución del sistema. |
+| Escalabilidad | Permitir la incorporación de nuevos módulos y funcionalidades. |
+| Seguridad | Proteger la información y controlar el acceso a las funcionalidades del ERP. |
+| Rendimiento | Proporcionar tiempos de respuesta adecuados en las operaciones principales. |
+| Integridad de datos | Garantizar la consistencia de la información mediante una base de datos relacional y transacciones. |
 
 ## Partes interesadas (Stakeholders) {#_partes_interesadas_stakeholders}
 
-
+<!--
 +---------------------------------------------+-------------+------------------------------------------------------------+
 | Rol/Nombre                                  | Contacto    | Expectativas                                               |
 +=============================================+=============+============================================================+
@@ -66,3 +76,12 @@ Las principales metas de calidad consideradas para la arquitectura son:
 | Responsable de recepción                    | Por definir | Registrar la recepción de mercancía y verificar las 
 <br>cantidades recibidas.<br>                                                                                            |
 +---------------------------------------------+-------------+------------------------------------------------------------+
+-->
+
+| Rol/Nombre | Contacto | Expectativas |
+|---|---|---|
+| Administrador del sistema ERP | Por definir | Gestionar y supervisar los módulos y usuarios del sistema. |
+| Gestor de compras | Por definir | Gestionar proveedores, solicitudes y órdenes de compra. |
+| Gestor de inventario | Por definir | Mantener actualizado el catálogo de productos y controlar la información relacionada con inventario. |
+| Empleado solicitante | Por definir | Registrar y consultar solicitudes de compra. |
+| Responsable de recepción | Por definir | Registrar la recepción de mercancía y verificar las cantidades recibidas. |
